@@ -58,14 +58,6 @@ UITests/         Onboarding, scanner validation and search navigation
 
 Dependencies are injected at the app boundary. Provider protocols keep networking replaceable in tests, while the repository coordinates concurrent lookups, cache fallback and personal records. Price comparisons live in domain use cases rather than view code.
 
-A few decisions shape the implementation:
-
-- UPC/EAN variants are normalized to a canonical barcode identity before matching.
-- A dated observation is different from a current offer. Provider timestamps are preserved; missing dates are not invented.
-- Store history is compared within a reference store. Online history keeps seller, URL, package title, currency and discount terms separate.
-- Location scopes are explicit. A country-level result is never labeled as a nearby shelf price.
-- Persistence failures and incomplete network responses remain visible instead of silently producing empty or fabricated history.
-
 ## Data sources
 
 | Source | Used for |
