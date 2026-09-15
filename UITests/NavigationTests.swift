@@ -5,7 +5,6 @@ final class NavigationTests: XCTestCase {
     func testBrowsingManualBarcodeValidationAndSearch() throws {
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchArguments = ["-onboarding.v2", "NO"]
         app.launch()
         let skip = app.buttons["skipLocationButton"]
         if skip.waitForExistence(timeout: 2) { skip.tap() }
